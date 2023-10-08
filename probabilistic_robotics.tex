@@ -1,0 +1,19 @@
+\chapter{Robotics}
+
+
+\begin{algorithm}
+    \renewcommand{\thealgorithm}{} % this line is used to remove the algorithm number.
+    \caption{\textbf{Bayes Filter}}\label{alg:cap}
+
+    \begin{algorithmic}[1]
+        \Function{BayesFilter}{$bel(x_{t-1}), u_t, z_t$}
+        \ForAll{$x_t$}
+        \State $\overline{bel}(x_t) = \int{p(x_t|u_t, x_{t-1})bel(x_{t-1})dx_{t-1}}$
+        \State $bel(x_t) = \eta{}p(z_t|x_t)\overline{bel}(x_t)$
+        \EndFor
+        \State \textbf{return} $bel(x_t)$
+        \EndFunction
+
+    \end{algorithmic}
+\end{algorithm}
+
